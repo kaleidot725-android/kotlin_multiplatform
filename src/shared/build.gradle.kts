@@ -4,7 +4,9 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-android-extensions")
+    id("com.squareup.sqldelight")
 }
+
 group = "jp.kaleidot725.sample"
 version = "1.0-SNAPSHOT"
 
@@ -14,6 +16,7 @@ repositories {
     jcenter()
     mavenCentral()
 }
+
 kotlin {
     android()
     ios {
@@ -34,6 +37,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("com.google.android.material:material:1.2.0")
+                implementation("com.squareup.sqldelight:android-driver:1.2.0")
             }
         }
         val androidTest by getting {
@@ -42,7 +46,11 @@ kotlin {
                 implementation("junit:junit:4.12")
             }
         }
-        val iosMain by getting
+        val iosMain by getting {
+            dependencies {
+                implementation("com.squareup.sqldelight:ios-driver:1.2.0")
+            }
+        }
         val iosTest by getting
     }
 }
