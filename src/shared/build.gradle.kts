@@ -7,6 +7,12 @@ plugins {
     id("com.squareup.sqldelight")
 }
 
+object SqlDelight {
+    const val runtime = "com.squareup.sqldelight:runtime:$"
+    const val android = "com.squareup.sqldelight:android-driver:$"
+    const val native = "com.squareup.sqldelight:native-driver:$
+}
+
 group = "jp.kaleidot725.sample"
 version = "1.0-SNAPSHOT"
 
